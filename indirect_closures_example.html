@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Example</title>
+    <style>
+    	.center {
+		    margin: auto;
+		    width: 50%;
+		    text-align: center;
+		    color: blue;
+		    font-size: 100px;
+		}
+		#display{
+			color:purple;
+		}
+
+	</style>
+
+  </head>
+  <body>
+  	<div class="center" >
+  		<button class=center id="clicker">Click Me!</button>
+  	</div>
+  	<p class="center" id="display">0</p>
+
+  	    <script>
+  	   	function addXandY(x, y){
+			return x + y;
+		};
+
+		function makeCounter(){
+			var counter = 0;
+			return function(){
+				return ++counter;
+			};
+		};
+
+		var advanceCounter = makeCounter();
+
+		function updateDisplay(x){
+			document.getElementById("display").innerHTML = advanceCounter();
+		}
+
+  	    var button = document.getElementById("clicker");
+  	    clicker.addEventListener("click", updateDisplay);
+
+    	</script>  
+  </body>
+</html>
